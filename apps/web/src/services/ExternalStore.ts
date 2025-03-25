@@ -31,7 +31,6 @@ class ExternalStore<T extends unknown> {
   }
 
   public readonly useStore = () => {
-    // eslint-disable-next-line
     return useSyncExternalStore(this.subscribe, this.getStore, this.getStore)
   }
 }

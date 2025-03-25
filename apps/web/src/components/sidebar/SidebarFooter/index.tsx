@@ -7,10 +7,11 @@ import {
   SidebarListItemIcon,
   SidebarListItemText,
 } from '@/components/sidebar/SidebarList'
-import { loadBeamer } from '@/services/beamer'
+import { BEAMER_SELECTOR, loadBeamer } from '@/services/beamer'
 import { useAppDispatch, useAppSelector } from '@/store'
 import { CookieAndTermType, hasConsentFor } from '@/store/cookiesAndTermsSlice'
 import { openCookieBanner } from '@/store/popupSlice'
+import BeamerIcon from '@/public/images/sidebar/whats-new.svg'
 import HelpCenterIcon from '@/public/images/sidebar/help-center.svg'
 import { Box, Link, ListItem, SvgIcon, useTheme } from '@mui/material'
 import DebugToggle from '../DebugToggle'
@@ -21,12 +22,14 @@ import { useCurrentChain } from '@/hooks/useChains'
 import SuggestionIcon from '@/public/images/common/lightbulb.svg'
 import darkPalette from '@/components/theme/darkPalette'
 import ProtofireLogo from '@/public/images/protofire.svg'
+import { useIsOfficialHost } from '@/hooks/useIsOfficialHost'
 
 const SidebarFooter = (): ReactElement => {
   const dispatch = useAppDispatch()
   const chain = useCurrentChain()
   const hasBeamerConsent = useAppSelector((state) => hasConsentFor(state, CookieAndTermType.UPDATES))
   const theme = useTheme()
+  const isOfficialHost = useIsOfficialHost()
 
   useEffect(() => {
     // Initialise Beamer when consent was previously given
@@ -49,18 +52,20 @@ const SidebarFooter = (): ReactElement => {
         </ListItem>
       )}
 
-      {/* <Track {...OVERVIEW_EVENTS.WHATS_NEW}>
-        <ListItem disablePadding>
-          <SidebarListItemButton id={BEAMER_SELECTOR} onClick={handleBeamer}>
-            <SidebarListItemIcon color="primary">
-              <BeamerIcon />
-            </SidebarListItemIcon>
-            <SidebarListItemText data-testid="list-item-whats-new" bold>
-              What&apos;s new
-            </SidebarListItemText>
-          </SidebarListItemButton>
-        </ListItem>
-      </Track> */}
+      {isOfficialHost && (
+        <Track {...OVERVIEW_EVENTS.WHATS_NEW}>
+          <ListItem disablePadding>
+            <SidebarListItemButton id={BEAMER_SELECTOR} onClick={handleBeamer}>
+              <SidebarListItemIcon color="primary">
+                <BeamerIcon />
+              </SidebarListItemIcon>
+              <SidebarListItemText data-testid="list-item-whats-new" bold>
+                What&apos;s new
+              </SidebarListItemText>
+            </SidebarListItemButton>
+          </ListItem>
+        </Track>
+      )}
 
       <Track {...OVERVIEW_EVENTS.HELP_CENTER}>
         <ListItem disablePadding>
