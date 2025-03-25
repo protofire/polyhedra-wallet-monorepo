@@ -18,6 +18,7 @@ const useIndexingStatus = () => {
     () => {
       return getIndexingStatus(chainId)
     },
+    // eslint-disable-next-line
     [chainId, count],
     false,
   )
