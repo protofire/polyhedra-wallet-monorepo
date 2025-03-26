@@ -13,13 +13,12 @@ import { CookieAndTermType, hasConsentFor } from '@/store/cookiesAndTermsSlice'
 import { openCookieBanner } from '@/store/popupSlice'
 import BeamerIcon from '@/public/images/sidebar/whats-new.svg'
 import HelpCenterIcon from '@/public/images/sidebar/help-center.svg'
-import { Box, Link, ListItem, SvgIcon, useTheme } from '@mui/material'
+import { Link, ListItem, SvgIcon } from '@mui/material'
 import DebugToggle from '../DebugToggle'
-import { IS_PRODUCTION, NEW_SUGGESTION_FORM, SUPPORT_FORM } from '@/config/constants'
+import { IS_PRODUCTION, SUPPORT_FORM } from '@/config/constants'
 import Track from '@/components/common/Track'
 import { OVERVIEW_EVENTS } from '@/services/analytics/events/overview'
 import { useCurrentChain } from '@/hooks/useChains'
-import SuggestionIcon from '@/public/images/common/lightbulb.svg'
 import darkPalette from '@/components/theme/darkPalette'
 import ProtofireLogo from '@/public/images/protofire.svg'
 import { useIsOfficialHost } from '@/hooks/useIsOfficialHost'
@@ -28,7 +27,6 @@ const SidebarFooter = (): ReactElement => {
   const dispatch = useAppDispatch()
   const chain = useCurrentChain()
   const hasBeamerConsent = useAppSelector((state) => hasConsentFor(state, CookieAndTermType.UPDATES))
-  const theme = useTheme()
   const isOfficialHost = useIsOfficialHost()
 
   useEffect(() => {
@@ -81,7 +79,7 @@ const SidebarFooter = (): ReactElement => {
           </a>
         </ListItem>
       </Track>
-      <ListItem disablePadding>
+      {/* <ListItem disablePadding>
         <a target="_blank" rel="noopener noreferrer" href={NEW_SUGGESTION_FORM} style={{ width: '100%' }}>
           <SidebarListItemButton
             style={{
@@ -106,7 +104,7 @@ const SidebarFooter = (): ReactElement => {
             <SidebarListItemText bold>New Features Suggestion?</SidebarListItemText>
           </SidebarListItemButton>
         </a>
-      </ListItem>
+      </ListItem> */}
       <ListItem>
         <SidebarListItemText primaryTypographyProps={{ variant: 'caption' }}>
           Supported by{' '}
