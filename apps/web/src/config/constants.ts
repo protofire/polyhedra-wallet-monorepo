@@ -66,7 +66,7 @@ export enum SafeAppsTag {
 }
 
 // Help Center
-export const HELP_CENTER_URL = 'https://safe-support.protofire.io'
+export const HELP_CENTER_URL = 'https://help.safe.global/'
 export const HelpCenterArticle = {
   ADDRESS_BOOK_DATA: `${HELP_CENTER_URL}/en/articles/40811-address-book-export-and-import`,
   ADVANCED_PARAMS: `${HELP_CENTER_URL}/en/articles/40837-advanced-transaction-parameters`,
@@ -125,3 +125,5 @@ export const TERMS_LINK =
 export const COOKIE_LINK =
   process.env.NEXT_PUBLIC_COOKIE_LINK ||
   'https://raw.githubusercontent.com/protofire/safe-legal/refs/heads/main/cookie.md'
+
+export const SUPPORT_FORM = 'https://safe-support.protofire.io'
