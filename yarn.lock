@@ -7484,12 +7484,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@safe-global/safe-deployments@npm:1.37.31, @safe-global/safe-deployments@npm:^1.37.31":
+"@safe-global/safe-deployments@npm:1.37.31":
   version: 1.37.31
   resolution: "@safe-global/safe-deployments@npm:1.37.31"
   dependencies:
     semver: "npm:^7.6.2"
   checksum: 10/990eee8be3dd2e420e641bd6f6b998f20f8a2a36b9fe2348485a038bd25aa22b3bd2c11d5dd3639cf3abaa6011c15022c8ce53d30f146623e769255e660a0661
+  languageName: node
+  linkType: hard
+
+"@safe-global/safe-deployments@patch:@safe-global/safe-deployments@npm%3A1.37.31#~/.yarn/patches/@safe-global-safe-deployments-npm-1.37.31-9a7d7bcd73.patch":
+  version: 1.37.31
+  resolution: "@safe-global/safe-deployments@patch:@safe-global/safe-deployments@npm%3A1.37.31#~/.yarn/patches/@safe-global-safe-deployments-npm-1.37.31-9a7d7bcd73.patch::version=1.37.31&hash=5e7eab"
+  dependencies:
+    semver: "npm:^7.6.2"
+  checksum: 10/97c62f0657393ed44cc2f574a41dc900e163fef89a733269d4a40784d298527ad1d0b61d698b46e49031bfaf7ee6182d0aee4c5385198ed97482a94f8d8b28a5
   languageName: node
   linkType: hard
 
@@ -7602,7 +7611,7 @@ __metadata:
     "@safe-global/safe-apps-sdk": "npm:^9.1.0"
     "@safe-global/safe-client-gateway-sdk": "npm:v1.60.1"
     "@safe-global/safe-core-sdk-types": "npm:^5.0.1"
-    "@safe-global/safe-deployments": "npm:1.37.31"
+    "@safe-global/safe-deployments": "patch:@safe-global/safe-deployments@npm%3A1.37.31#~/.yarn/patches/@safe-global-safe-deployments-npm-1.37.31-9a7d7bcd73.patch"
     "@safe-global/safe-gateway-typescript-sdk": "npm:3.22.7"
     "@safe-global/safe-modules-deployments": "npm:^2.2.6"
     "@safe-global/store": "workspace:^"
