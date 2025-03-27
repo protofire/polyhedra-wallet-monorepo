@@ -79,7 +79,7 @@ const Footer = (): ReactElement | null => {
         ) : (
           <>
             <li>
-              <Typography variant="caption">&copy;{new Date().getFullYear()} Polyhedra Safe</Typography>
+              <Typography variant="caption">&copy;{new Date().getFullYear()} Polyhedra</Typography>
             </li>
             <li>
               <FooterLink href={getHref(AppRoutes.terms)}>Terms</FooterLink>
