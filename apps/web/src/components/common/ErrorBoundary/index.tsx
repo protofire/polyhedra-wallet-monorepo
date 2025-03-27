@@ -1,6 +1,6 @@
 import { Typography, Link } from '@mui/material'
 
-import { HELP_CENTER_URL, IS_PRODUCTION, SUPPORT_FORM } from '@/config/constants'
+import { IS_PRODUCTION, SUPPORT_FORM } from '@/config/constants'
 import { AppRoutes } from '@/config/routes'
 import WarningIcon from '@/public/images/notifications/warning.svg'
 
