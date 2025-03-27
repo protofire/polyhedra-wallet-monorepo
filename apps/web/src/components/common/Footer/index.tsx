@@ -8,7 +8,7 @@ import { AppRoutes } from '@/config/routes'
 import packageJson from '../../../../package.json'
 import ExternalLink from '../ExternalLink'
 import MUILink from '@mui/material/Link'
-import { HELP_CENTER_URL } from '@/config/constants'
+import { HELP_CENTER_URL, SUPPORT_FORM } from '@/config/constants'
 import { useIsOfficialHost } from '@/hooks/useIsOfficialHost'
 import ProtofireLogo from '@/public/images/protofire-logo.svg'
 
@@ -91,7 +91,7 @@ const Footer = (): ReactElement | null => {
               <FooterLink href={getHref(AppRoutes.settings.index)}>Preferences</FooterLink>
             </li>
             <li>
-              <ExternalLink href={HELP_CENTER_URL} noIcon sx={{ span: { textDecoration: 'underline' } }}>
+              <ExternalLink href={SUPPORT_FORM} noIcon sx={{ span: { textDecoration: 'underline' } }}>
                 Help
               </ExternalLink>
             </li>
